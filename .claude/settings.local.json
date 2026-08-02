@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(java -version)",
+      "Bash(mvn -version)",
+      "Bash(git --version)",
+      "Bash(/usr/libexec/java_home -V)",
+      "Read(//Users/hemanthsagi/**)",
+      "Bash(curl -s -o /dev/null -w \"saucedemo:%{http_code}\\\\n\" --max-time 15 https://www.saucedemo.com/)",
+      "Bash(curl -s -o /dev/null -w \"jsonplaceholder:%{http_code}\\\\n\" --max-time 15 https://jsonplaceholder.typicode.com/posts/1)",
+      "Bash(curl -s -o /dev/null -w \"reqres-nokey:%{http_code}\\\\n\" --max-time 15 https://reqres.in/api/users/2)",
+      "Bash(curl -s -o /dev/null -w \"reqres-key:%{http_code}\\\\n\" --max-time 15 -H \"x-api-key: reqres-free-v1\" https://reqres.in/api/users/2)",
+      "Bash(curl -s -o /dev/null -w \"maven-central:%{http_code}\\\\n\" --max-time 15 https://repo1.maven.org/maven2/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 15 https://dummyjson.com/users/1)",
+      "Bash(curl -s --max-time 20 -X POST https://dummyjson.com/auth/login -H 'Content-Type: application/json' -d '{\"username\":\"emilys\",\"password\":\"emilyspass\",\"expiresInMins\":30}')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 15 https://api.restful-api.dev/objects)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 15 -X POST https://jsonplaceholder.typicode.com/posts -H 'Content-Type: application/json' -d '{\"title\":\"a\",\"body\":\"b\",\"userId\":1}')",
+      "Bash(brew install *)",
+      "Bash(curl -s --max-time 15 https://dummyjson.com/users/1)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}\\\\n' --max-time 15 -X POST https://dummyjson.com/users/add -H 'Content-Type: application/json' -d '{\"firstName\":\"Ada\",\"lastName\":\"Lovelace\",\"age\":36,\"email\":\"ada@example.com\"}')",
+      "Bash(curl -s --max-time 15 'https://dummyjson.com/users?limit=5&skip=0')",
+      "Bash(perl -0pi -e 's/\\\\breturn wait\\\\\\(\\\\\\)\\\\.until/return waiter\\(\\)->until/g' /dev/null)",
+      "Bash(python3 -)",
+      "Bash(curl -s -w '\\\\nHTTP:%{http_code}\\\\n' --max-time 15 https://dummyjson.com/auth/me -H 'Authorization: Bearer not-a-real-token')",
+      "Bash(python3 -c \"import json,sys;d=json.load\\(sys.stdin\\);print\\(sorted\\(d.keys\\(\\)\\)\\)\")",
+      "Bash(curl -s --max-time 15 -X POST https://dummyjson.com/users/add -H 'Content-Type: application/json' -d '{\"firstName\":\"Ada\",\"lastName\":\"Lovelace\",\"age\":36,\"email\":\"ada@example.com\",\"username\":\"ada.l\"}')",
+      "Bash(python3 -c ' *)",
+      "Bash(grep -rInE \"\\(api[_-]?key|secret|token\\)\\\\s*[:=]\\\\s*[A-Za-z0-9_\\\\-]{16,}\" --include=\"*.properties\" --include=\"*.java\" --include=\"*.xml\" --include=\"*.yml\" --include=\"*.json\" src/ .github/)",
+      "Bash(grep -v '^target$')",
+      "Bash(grep -v '^.claude$')",
+      "Bash(curl -s --max-time 20 \"https://search.maven.org/solrsearch/select?q=g:org.projectlombok+AND+a:lombok&core=gav&rows=12&wt=json\")",
+      "Bash(curl -s --max-time 20 https://repo1.maven.org/maven2/org/projectlombok/lombok/maven-metadata.xml)"
+    ]
+  }
+}

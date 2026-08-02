@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "User",
+  "description": "Contract for a single user, as returned by GET /users/{id}, POST /users/add and PUT /users/{id}.",
+  "type": "object",
+  "required": ["id", "firstName", "lastName", "email", "address"],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "firstName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lastName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "maidenName": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 150
+    },
+    "gender": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "birthDate": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "bloodGroup": {
+      "type": "string"
+    },
+    "height": {
+      "type": ["number", "null"]
+    },
+    "weight": {
+      "type": ["number", "null"]
+    },
+    "eyeColor": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "address": {
+      "type": "object",
+      "required": ["address", "city", "postalCode", "country"],
+      "properties": {
+        "address": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "stateCode": { "type": "string" },
+        "postalCode": { "type": "string" },
+        "country": { "type": "string" },
+        "coordinates": {
+          "type": "object",
+          "properties": {
+            "lat": { "type": ["number", "null"] },
+            "lng": { "type": ["number", "null"] }
+          }
+        }
+      }
+    }
+  }
+}

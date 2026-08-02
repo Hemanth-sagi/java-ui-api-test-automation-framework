@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Console output stays terse and readable during a run; the rolling file keeps the
+  full history, including the thread name, which is what makes a parallel run
+  possible to untangle after the fact.
+-->
+<Configuration status="WARN">
+
+    <Properties>
+        <Property name="LOG_DIR">target/logs</Property>
+        <Property name="CONSOLE_PATTERN">%highlight{%-5level} %style{[%t]}{cyan} %style{%c{1}}{blue} - %msg%n</Property>
+        <Property name="FILE_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%t] %c{1.} - %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${CONSOLE_PATTERN}"/>
+        </Console>
+
+        <RollingFile name="File"
+                     fileName="${LOG_DIR}/automation.log"
+                     filePattern="${LOG_DIR}/automation-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${FILE_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.qa" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+
+        <!-- Third-party libraries are noisy at INFO; keep them at WARN and out of the console. -->
+        <Logger name="org.openqa.selenium" level="WARN"/>
+        <Logger name="io.github.bonigarcia" level="WARN"/>
+        <Logger name="com.microsoft.playwright" level="WARN"/>
+        <Logger name="io.restassured" level="WARN"/>
+
+        <Root level="WARN">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>

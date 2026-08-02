@@ -1,0 +1,32 @@
+[
+  {
+    "scenario": "Locked-out user is refused with a specific message",
+    "username": "locked_out_user",
+    "password": "secret_sauce",
+    "expectedError": "Epic sadface: Sorry, this user has been locked out."
+  },
+  {
+    "scenario": "Wrong password is refused without revealing which field was wrong",
+    "username": "standard_user",
+    "password": "wrong_password",
+    "expectedError": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "scenario": "Unknown user gets the same message as a wrong password (no user enumeration)",
+    "username": "no_such_user",
+    "password": "secret_sauce",
+    "expectedError": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "scenario": "Empty form reports the missing username first",
+    "username": "",
+    "password": "",
+    "expectedError": "Epic sadface: Username is required"
+  },
+  {
+    "scenario": "Missing password is reported once the username is supplied",
+    "username": "standard_user",
+    "password": "",
+    "expectedError": "Epic sadface: Password is required"
+  }
+]

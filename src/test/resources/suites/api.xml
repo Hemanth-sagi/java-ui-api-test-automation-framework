@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+  API only: no browser, no driver download, runs in seconds.
+
+  Kept as a first-class suite because it is the one that belongs in a pre-commit hook or a
+  pull-request gate, where a full UI run would be too slow to be worth waiting for.
+-->
+<suite name="API Suite" verbose="1" parallel="methods" thread-count="4" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="com.qa.framework.listeners.TestListener"/>
+        <listener class-name="com.qa.framework.listeners.RetryTransformer"/>
+    </listeners>
+
+    <test name="API - REST Assured">
+        <packages>
+            <package name="com.qa.tests.api"/>
+        </packages>
+    </test>
+</suite>

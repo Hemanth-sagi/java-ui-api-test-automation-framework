@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+  Smoke: the shortest run that still proves all three layers work — API auth and read, a Selenium
+  sign-in and add-to-cart, and a Playwright end-to-end order.
+
+  Selected by group rather than by listing classes, so a new test joins the smoke suite by being
+  tagged "smoke" and this file never has to change.
+-->
+<suite name="Smoke Suite" verbose="1" parallel="methods" thread-count="3" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="com.qa.framework.listeners.TestListener"/>
+        <listener class-name="com.qa.framework.listeners.RetryTransformer"/>
+    </listeners>
+
+    <test name="Smoke - all layers">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.qa.tests.api"/>
+            <package name="com.qa.tests.ui.selenium"/>
+            <package name="com.qa.tests.ui.playwright"/>
+        </packages>
+    </test>
+</suite>

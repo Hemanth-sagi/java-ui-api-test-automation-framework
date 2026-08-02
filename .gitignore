@@ -1,0 +1,61 @@
+# ---------------------------------------------------------------------------
+# Build output
+# ---------------------------------------------------------------------------
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+
+# ---------------------------------------------------------------------------
+# Test artefacts — regenerated on every run, never committed
+# ---------------------------------------------------------------------------
+allure-results/
+allure-report/
+.allure/
+extent-report/
+test-output/
+screenshots/
+playwright-traces/
+playwright-report/
+logs/
+*.log
+
+# ---------------------------------------------------------------------------
+# Secrets — the framework reads credentials from environment variables, so
+# nothing sensitive should ever reach the repository. These patterns are a
+# backstop in case a local override file is created by habit.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+**/local.properties
+**/secrets.properties
+**/*-secrets.properties
+*.pem
+*.p12
+*.jks
+credentials.json
+
+# ---------------------------------------------------------------------------
+# IDE and OS
+# ---------------------------------------------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------------------------------------
+# Maven wrapper: mvnw, mvnw.cmd and maven-wrapper.properties ARE committed —
+# they are what lets a fresh clone build without Maven installed. The wrapper
+# uses the script-only distribution, so there is no jar to commit; this entry
+# is a backstop in case it is ever regenerated in jar mode.
+# ---------------------------------------------------------------------------
+.mvn/wrapper/maven-wrapper.jar

@@ -1,0 +1,29 @@
+[
+  {
+    "scenario": "Straightforward record",
+    "firstName": "Ada",
+    "lastName": "Lovelace",
+    "age": 36,
+    "gender": "female",
+    "email": "ada.lovelace@example.com",
+    "username": "ada.lovelace"
+  },
+  {
+    "scenario": "Non-ASCII name — checks UTF-8 survives the round trip",
+    "firstName": "Zoë",
+    "lastName": "Müller-Škoda",
+    "age": 41,
+    "gender": "female",
+    "email": "zoe.muller@example.com",
+    "username": "zoe.muller"
+  },
+  {
+    "scenario": "Boundary age of 0",
+    "firstName": "Newborn",
+    "lastName": "Record",
+    "age": 0,
+    "gender": "other",
+    "email": "newborn.record@example.com",
+    "username": "newborn.record"
+  }
+]

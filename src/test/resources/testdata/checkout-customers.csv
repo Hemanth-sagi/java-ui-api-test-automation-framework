@@ -1,0 +1,11 @@
+# Checkout form validation matrix.
+# CSV rather than JSON on purpose: a flat matrix like this is easier for a tester or BA to extend
+# in a spreadsheet, and new rows need no code change. An empty expectedError means the row is valid
+# and the order is expected to complete.
+scenario,firstName,lastName,postalCode,expectedError
+All details supplied,Ada,Lovelace,SW1A 1AA,
+Missing first name,,Lovelace,SW1A 1AA,Error: First Name is required
+Missing last name,Ada,,SW1A 1AA,Error: Last Name is required
+Missing postcode,Ada,Lovelace,,Error: Postal Code is required
+Entirely empty form,,,,Error: First Name is required
+Names with accents and hyphens are accepted,Ada-Renée,O'Lovelace,EC1A 1BB,

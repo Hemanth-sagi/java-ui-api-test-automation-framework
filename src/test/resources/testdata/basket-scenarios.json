@@ -1,0 +1,17 @@
+[
+  {
+    "scenario": "Single item basket",
+    "products": ["Sauce Labs Onesie"],
+    "expectedSubtotal": "7.99"
+  },
+  {
+    "scenario": "Two items of differing value",
+    "products": ["Sauce Labs Backpack", "Sauce Labs Bike Light"],
+    "expectedSubtotal": "39.98"
+  },
+  {
+    "scenario": "Three items including a product with punctuation in its name",
+    "products": ["Sauce Labs Fleece Jacket", "Sauce Labs Bolt T-Shirt", "Test.allTheThings() T-Shirt (Red)"],
+    "expectedSubtotal": "81.97"
+  }
+]
