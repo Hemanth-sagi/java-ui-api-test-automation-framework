@@ -53,38 +53,19 @@ Applications under test — both public, no credentials required:
 
 ## Screenshots
 
-> **📸 PLACEHOLDER — drop your images into `docs/images/` and they will render here.**
-> The file names below are already referenced; just save your captures with these names.
-
-<!-- ============================ PLACEHOLDER 1 ============================ -->
-**Allure report — suite overview**
-
-> Run `mvn test && mvn allure:serve`, screenshot the landing page, save as
-> `docs/images/allure-overview.png`
+**Allure report — suite overview:** 65 tests, 100% passing across the Regression Suite.
 
 ![Allure report overview](docs/images/allure-overview.png)
 
-<!-- ============================ PLACEHOLDER 2 ============================ -->
-**Allure report — a test's step tree**
-
-> Open any test and expand its steps (the `@Step`-annotated page-object methods), save as
-> `docs/images/allure-test-detail.png`
+**Allure report — a test's step tree:** every `@Step`-annotated page-object action, timed and traceable.
 
 ![Allure test detail](docs/images/allure-test-detail.png)
 
-<!-- ============================ PLACEHOLDER 3 ============================ -->
-**Test run — the full suite passing in the terminal**
-
-> Screenshot the tail of `mvn test` showing the `Tests run: 65, Failures: 0` summary, save as
-> `docs/images/test-run.png`
+**Test run — the full suite passing in the terminal:** `Tests run: 65, Failures: 0` in ~54s (3 parallel threads).
 
 ![Test run](docs/images/test-run.png)
 
-<!-- ============================ PLACEHOLDER 4 ============================ -->
-**ExtentReports — the shareable single-file HTML report**
-
-> Open `target/extent-report/index.html`, screenshot, save as
-> `docs/images/extent-report.png`
+**ExtentReports — the shareable single-file HTML report:** self-contained, with descriptive test names and pass/fail badges.
 
 ![ExtentReports](docs/images/extent-report.png)
 
