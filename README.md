@@ -73,12 +73,12 @@ Applications under test — both public, no credentials required:
 ![Allure test detail](docs/images/allure-test-detail.png)
 
 <!-- ============================ PLACEHOLDER 3 ============================ -->
-**Test run — parallel execution in the terminal**
+**Test run — the full suite passing in the terminal**
 
-> Record `mvn test` with your terminal recorder of choice, save as
-> `docs/images/test-run.gif`
+> Screenshot the tail of `mvn test` showing the `Tests run: 65, Failures: 0` summary, save as
+> `docs/images/test-run.png`
 
-![Test run](docs/images/test-run.gif)
+![Test run](docs/images/test-run.png)
 
 <!-- ============================ PLACEHOLDER 4 ============================ -->
 **ExtentReports — the shareable single-file HTML report**
