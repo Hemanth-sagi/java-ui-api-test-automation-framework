@@ -51,6 +51,7 @@ credentials.json
 .project
 .DS_Store
 Thumbs.db
+.claude/
 
 # ---------------------------------------------------------------------------
 # Maven wrapper: mvnw, mvnw.cmd and maven-wrapper.properties ARE committed —
